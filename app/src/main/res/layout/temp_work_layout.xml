@@ -2,179 +2,234 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="10dp"
     android:orientation="vertical">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:paddingTop="15dp">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="JODYWINSTERNOFF" />
-
-    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:gravity="center">
+        android:gravity="center_vertical"
+        android:layout_height="wrap_content">
 
         <ImageView
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:src="@mipmap/ic_launcher_round" />
-
-    </LinearLayout>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:gravity="center"
-        android:text="Jody Wisternoff"
-        android:textColor="#000000"
-        android:textSize="23sp" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:gravity="center"
-        android:text="Experimental electronic music pioneer.\nHalf of duo Way Out West. Boss at Anjunadeep"
-        android:textColor="#B8B8B8" />
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:gravity="center">
-
-        <Button
-            android:layout_width="150dp"
-            android:layout_height="40dp"
-            android:background="@drawable/purple_gradient_round_btn_background"
-            android:text="FOLLOWING"
-            android:textColor="#FFFFFF" />
-
-        <Button
-            android:layout_width="150dp"
-            android:layout_height="40dp"
-            android:layout_marginLeft="10dp"
-            android:background="@drawable/purple_boader_white_round_btn_background"
-            android:text="MESSAGE"
-            android:textColor="#867AA8" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:orientation="vertical">
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@mipmap/ic_launcher_round"/>
 
         <TextView
+            android:layout_marginLeft="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="업체정보"
+            android:textSize="18sp"
+            android:textColor="#000000"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="5dp"
+        android:background="#A0A0A0"/>
+
+    <LinearLayout
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="#909090"/>
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="영업시간"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#000000"
+                android:text="09:00 - 20:00"/>
+        </LinearLayout>
+
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="center_vertical"
             android:orientation="horizontal">
 
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="236"
-                    android:textColor="#000000"
-                    android:textSize="17sp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="RECORDS"
-                    android:textColor="#B2B2B2" />
-
-            </LinearLayout>
-
             <TextView
-                android:layout_width="1dp"
-                android:layout_height="match_parent"
-                android:background="#909090"/>
-
-            <LinearLayout
-                android:layout_width="0dp"
+                android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:orientation="vertical">
+                android:text="부가정보"/>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="23,6k"
-                    android:textColor="#000000"
-                    android:textSize="17sp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="RATINGS"
-                    android:textColor="#B2B2B2" />
-
-            </LinearLayout>
-
-
+            <ImageView
+                android:src="@drawable/cesco_logo"
+                android:layout_width="36dp"
+                android:layout_height="27dp" />
             <TextView
-                android:layout_width="1dp"
-                android:layout_height="match_parent"
-                android:background="#909090"/>
-
-            <LinearLayout
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="2,8k"
-                    android:textColor="#000000"
-                    android:textSize="17sp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="FOLLOWERS"
-                    android:textColor="#B2B2B2" />
-
-            </LinearLayout>
-
-
+                android:textColor="#000000"
+                android:layout_marginLeft="5dp"
+                android:text="세스코멤버스 사업장"/>
         </LinearLayout>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="#909090"/>
 
 
 
     </LinearLayout>
 
+    <LinearLayout
+        android:layout_marginTop="30dp"
+        android:layout_width="match_parent"
+        android:gravity="center_vertical"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@mipmap/ic_launcher_round"/>
+
+        <TextView
+            android:layout_marginLeft="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="결제정보"
+            android:textSize="18sp"
+            android:textColor="#000000"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="5dp"
+        android:background="#A0A0A0"/>
+
+    <LinearLayout
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="최소주문금액"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#000000"
+                android:text="15,000원"/>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="결제수단"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#000000"
+                android:text="신용카드, 현금, 요기서결제"/>
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="30dp"
+
+        android:layout_width="match_parent"
+        android:gravity="center_vertical"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@mipmap/ic_launcher_round"/>
+
+        <TextView
+            android:layout_marginLeft="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="사업자정보"
+            android:textSize="18sp"
+            android:textColor="#000000"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="5dp"
+        android:background="#A0A0A0"/>
+
+    <LinearLayout
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="상호명"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#000000"
+                android:text="본도시락서울시청점"/>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="사업자등록번호"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#000000"
+               android:text="429-25-00238"/>
+        </LinearLayout>
+
+
+
+    </LinearLayout>
 
 </LinearLayout>

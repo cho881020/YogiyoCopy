@@ -100,10 +100,11 @@ public class StoreAdapter extends ArrayAdapter<StoreData> {
         openAndCloseTimeTxt.setText(openCloseStr);
 
 
-
+        // 최소 배달 금액 표시
         String minDeliveryCostStr = String.format("%,d원 이상 배달 가능", data.getMinCost());
         minDeliveryCostTxt.setText(minDeliveryCostStr);
 
+        // 세스코 가입 여부 표시
         if (data.isCesco()) {
             isCescoImg.setVisibility(View.VISIBLE);
         }

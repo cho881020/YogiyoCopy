@@ -119,6 +119,9 @@ public class MainActivity extends BaseActivity {
     }
 
     private void makeTabHost() {
+
+        myTabHost.setup();
+
         TabHost.TabSpec spec1 = myTabHost.newTabSpec("tab1").setIndicator("가게목록");
         spec1.setContent(R.id.tab1);
         myTabHost.addTab(spec1);
@@ -145,7 +148,6 @@ public class MainActivity extends BaseActivity {
         storeListView = (ListView) findViewById(R.id.storeListView);
 
 
-        myTabHost.setup();
     }
 }
 
