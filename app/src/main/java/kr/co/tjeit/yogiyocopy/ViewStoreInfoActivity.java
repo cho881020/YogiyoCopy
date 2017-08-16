@@ -5,6 +5,7 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.TabHost;
 import android.widget.TabWidget;
 import android.widget.TextView;
@@ -15,6 +16,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
+import kr.co.tjeit.yogiyocopy.adapter.MenuAdapter;
+import kr.co.tjeit.yogiyocopy.data.MenuData;
 import kr.co.tjeit.yogiyocopy.data.StoreData;
 
 public class ViewStoreInfoActivity extends BaseActivity {
@@ -42,6 +45,13 @@ public class ViewStoreInfoActivity extends BaseActivity {
     private TextView minDeliveryCostInTabTxt;
     private TextView corpNameTxt;
     private TextView corpNumTxt;
+    private android.widget.ListView menuListView;
+
+    // 메뉴의 경우에는, 가게에 따라 그 데이터가 전혀 달라지게됨.
+    // 즉 앱 전체적으로 공유하는 성질의 데이터가 아니므로
+    // 액티비티 내부에서 선언하고 활용.
+    List<MenuData> menuDataList = new ArrayList<>();
+    MenuAdapter mAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -85,6 +95,9 @@ public class ViewStoreInfoActivity extends BaseActivity {
 
     @Override
     public void setValues() {
+
+        mAdapter = new MenuAdapter(mContext, menuDataList);
+        menuListView.setAdapter(mAdapter);
 
         storeNameTxt.setText(mStoreData.getStoreName());
 
@@ -186,13 +199,14 @@ public class ViewStoreInfoActivity extends BaseActivity {
         this.tabcontent = (FrameLayout) findViewById(android.R.id.tabcontent);
         this.tab3 = (LinearLayout) findViewById(R.id.tab3);
         this.corpNumTxt = (TextView) findViewById(R.id.corpNumTxt);
-        this.corpNameTxt = (TextView) findViewById(R.id.coprNameTxt);
+        this.corpNameTxt = (TextView) findViewById(R.id.corpNameTxt);
         this.minDeliveryCostInTabTxt = (TextView) findViewById(R.id.minDeliveryCostInTabTxt);
         this.isCescoTxt = (TextView) findViewById(R.id.isCescoTxt);
         this.isCescoImg = (ImageView) findViewById(R.id.isCescoImg);
         this.openAndCloseTimeTxt = (TextView) findViewById(R.id.openAndCloseTimeTxt);
         this.tab2 = (LinearLayout) findViewById(R.id.tab2);
         this.tab1 = (LinearLayout) findViewById(R.id.tab1);
+        this.menuListView = (ListView) findViewById(R.id.menuListView);
         this.tabs = (TabWidget) findViewById(android.R.id.tabs);
         this.minDeliveryCostTxt = (TextView) findViewById(R.id.minDeliveryCostTxt);
         this.avgRatingTxt = (TextView) findViewById(R.id.avgRatingTxt);
