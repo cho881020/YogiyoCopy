@@ -50,7 +50,7 @@ public class ViewStoreInfoActivity extends BaseActivity {
     // 메뉴의 경우에는, 가게에 따라 그 데이터가 전혀 달라지게됨.
     // 즉 앱 전체적으로 공유하는 성질의 데이터가 아니므로
     // 액티비티 내부에서 선언하고 활용.
-    List<MenuData> menuDataList = new ArrayList<>();
+//    List<MenuData> menuDataList = new ArrayList<>();
     MenuAdapter mAdapter;
 
     @Override
@@ -96,7 +96,7 @@ public class ViewStoreInfoActivity extends BaseActivity {
     @Override
     public void setValues() {
 
-        mAdapter = new MenuAdapter(mContext, menuDataList);
+        mAdapter = new MenuAdapter(mContext, mStoreData.getMenuDataList());
         menuListView.setAdapter(mAdapter);
 
         storeNameTxt.setText(mStoreData.getStoreName());

@@ -16,6 +16,7 @@ import java.util.List;
 
 import kr.co.tjeit.yogiyocopy.adapter.OrderAdapter;
 import kr.co.tjeit.yogiyocopy.adapter.StoreAdapter;
+import kr.co.tjeit.yogiyocopy.data.MenuData;
 import kr.co.tjeit.yogiyocopy.data.OrderData;
 import kr.co.tjeit.yogiyocopy.data.StoreData;
 import kr.co.tjeit.yogiyocopy.util.GlobalData;
@@ -95,6 +96,16 @@ public class MainActivity extends BaseActivity {
         GlobalData.storeDataList.add(new StoreData("https://www.yogiyo.co.kr/media/restaurant_logos/%EC%89%AC%EB%A6%BC%ED%94%84_%ED%94%BC%EC%9E%9001_20131128_FoodAD_crop_200x200.jpg", "훼미리피자", 4.2f, 1200, 2330, 15000, true, "213-45-78945", "훼미리피자종로점"));
         GlobalData.storeDataList.add(new StoreData("https://www.yogiyo.co.kr/media/restaurant_logos/%ED%83%95%EC%88%98%EC%9C%A103_20131128_FoodAD_crop_200x200_Rn9zt25.jpg", "남경-남대문시장점", 3.8f, 1100, 300, 25000, false, "321-45-32165", "남경남대문시장점"));
 
+        GlobalData.storeDataList.get(3).getMenuDataList().add(new MenuData("https://www.yogiyo.co.kr/media/img/test_images/franchise_photo_menu/%EB%B3%B8%EB%8F%84%EC%8B%9C%EB%9D%BD/2017-08-07/%EB%B3%B8%EB%8F%84%EC%8B%9C%EB%9D%BD_%ED%99%9C%EB%A0%A5%EB%8F%84%EC%8B%9C%EB%9D%BD_170807_menuitem_original.jpg",
+                "( 세트 ) 활력 도시락", 23900));
+        GlobalData.storeDataList.get(3).getMenuDataList().add(new MenuData("https://www.yogiyo.co.kr/media/img/test_images/franchise_photo_menu/%EB%B3%B8%EB%8F%84%EC%8B%9C%EB%9D%BD/2017-03-14/%EB%B3%B8%EB%8F%84%EC%8B%9C%EB%9D%BD_%EC%9D%BC%ED%92%88%EB%B6%88%EA%B3%A0%EA%B8%B0_170313_menuitem_original.jpg",
+                "일품불고기 도시락", 10900));
+        GlobalData.storeDataList.get(3).getMenuDataList().add(new MenuData("https://www.yogiyo.co.kr/media/img/test_images/franchise_photo_menu/%EB%B3%B8%EB%8F%84%EC%8B%9C%EB%9D%BD/2017-03-14/%EB%B3%B8%EB%8F%84%EC%8B%9C%EB%9D%BD_%EC%9A%B8%EB%A6%89%EB%8F%84%ED%95%9C%EC%83%81%EB%8F%84%EC%8B%9C%EB%9D%BD_170313_menuitem_original.jpg",
+                "( 세트 ) 울릉도 한상 도시락", 23900));
+        GlobalData.storeDataList.get(3).getMenuDataList().add(new MenuData("https://www.yogiyo.co.kr/media/img/test_images/franchise_photo_menu/%EB%B3%B8%EB%8F%84%EC%8B%9C%EB%9D%BD/2017-03-14/%EB%B3%B8%EB%8F%84%EC%8B%9C%EB%9D%BD_%EC%88%AF%EB%B6%88%EC%A0%9C%EC%9C%A1%EC%8C%88%EB%B0%A5_170313_menuitem_original.jpg",
+                "( 세트 ) 숯불제육구이쌈밥 도시락", 8500));
+        GlobalData.storeDataList.get(3).getMenuDataList().add(new MenuData("https://www.yogiyo.co.kr/media/img/test_images/franchise_photo_menu/%EB%B3%B8%EB%8F%84%EC%8B%9C%EB%9D%BD/2017-03-14/%EB%B3%B8%EB%8F%84%EC%8B%9C%EB%9D%BD_%EB%8B%A4%EC%9D%B4%EC%96%B4%ED%8A%B8%EB%8B%AD%EA%B0%80%EC%8A%B4%EC%82%B4_170313_menuitem_original.jpg",
+                "다이어트닭가슴살 도시락", 5900));
 
         orderDataList.add(new OrderData(GlobalData.storeDataList.get(0),
                 Calendar.getInstance(), "종로 3가", 15000));

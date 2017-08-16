@@ -20,6 +20,7 @@ public class StoreData implements Serializable {
     private String corpNumber; // 사업자등록번호 204-28"-"86905
     private String corpName; // 상호명
     private List<String> reviews = new ArrayList<>();
+    private List<MenuData> menuDataList = new ArrayList<>();
 
     public StoreData() {
     }
@@ -117,4 +118,14 @@ public class StoreData implements Serializable {
     public void setReviews(List<String> reviews) {
         this.reviews = reviews;
     }
+
+
+    public List<MenuData> getMenuDataList() {
+        return menuDataList;
+    }
+
+    public void setMenuDataList(List<MenuData> menuDataList) {
+        this.menuDataList = menuDataList;
+    }
+
 }
