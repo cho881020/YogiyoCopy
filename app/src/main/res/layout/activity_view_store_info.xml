@@ -8,6 +8,7 @@
     tools:context="kr.co.tjeit.yogiyocopy.ViewStoreInfoActivity">
 
     <TextView
+        android:id="@+id/storeNameTxt"
         android:padding="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

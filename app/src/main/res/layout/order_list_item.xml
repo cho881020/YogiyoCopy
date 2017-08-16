@@ -13,111 +13,121 @@
             android:id="@+id/storeNameTxt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="#000000"
-            android:textSize="20sp"
             android:padding="15dp"
-            android:text="리츠델리피자"/>
+            android:text="리츠델리피자"
+            android:textColor="#000000"
+            android:textSize="20sp" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="#909090"/>
+            android:background="#909090" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingLeft="15dp"
-            android:paddingTop="7dp"
+            android:orientation="horizontal"
             android:paddingBottom="7dp"
-            android:orientation="horizontal">
+            android:paddingLeft="15dp"
+            android:paddingTop="7dp">
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="주문 접수 완료!"/>
+                android:text="주문 접수 완료!" />
 
             <TextView
                 android:id="@+id/dateTxt"
-                android:layout_marginLeft="5dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="2014년 11월 07일"/>
+                android:layout_marginLeft="5dp"
+                android:text="2014년 11월 07일" />
         </LinearLayout>
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="#909090"/>
+            android:background="#909090" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_vertical"
-            android:paddingLeft="15dp"
-            android:paddingTop="5dp"
+            android:orientation="horizontal"
             android:paddingBottom="5dp"
+            android:paddingLeft="15dp"
             android:paddingRight="5dp"
-            android:orientation="horizontal">
+            android:paddingTop="5dp">
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
-                
+
                 <TextView
                     android:id="@+id/locationTxt"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" 
-                    android:text="강남구 역삼동"/>
+                    android:layout_height="wrap_content"
+                    android:text="강남구 역삼동" />
 
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="결제 금액 : "/>
+                        android:text="결제 금액 : " />
 
                     <TextView
                         android:id="@+id/amountTxt"
-                        android:layout_marginLeft="5dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="13,000 원"/>
+                        android:layout_marginLeft="5dp"
+                        android:text="13,000 원" />
+
                     <TextView
                         android:id="@+id/payMethodTypeTxt"
-                        android:layout_marginLeft="5dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="(현장 결제)"/>
+                        android:layout_marginLeft="5dp"
+                        android:text="(현장 결제)" />
 
                 </LinearLayout>
 
-                
+
             </LinearLayout>
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"/>
+                android:layout_weight="1" />
+
+            <!-- Ctrl + / -->
+            <!-- 리스트아이템 내부에 버튼이 끼면 -->
+            <!-- 반드시 버튼에 focusable 속성 false 주자 -->
 
             <Button
                 android:id="@+id/reviewBtn"
-                android:background="@drawable/red_boader_box"
                 android:layout_width="60dp"
                 android:layout_height="wrap_content"
-                android:text="리뷰"/>
+                android:background="@drawable/red_boader_box"
+                android:focusable="false"
+                android:text="리뷰" />
 
             <Button
                 android:id="@+id/reorderBtn"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
                 android:background="#FF0000"
-                android:layout_width="80dp"
+                android:focusable="false"
+                android:text="재주문"
                 android:textColor="#FFFFFF"
                 android:textSize="17sp"
-                android:textStyle="bold"
-                android:layout_height="wrap_content"
-                android:text="재주문"/>
+                android:textStyle="bold" />
 
         </LinearLayout>
 

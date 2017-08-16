@@ -1,12 +1,13 @@
 package kr.co.tjeit.yogiyocopy.data;
 
+import java.io.Serializable;
 import java.util.Calendar;
 
 /**
  * Created by user on 2017-08-03.
  */
 
-public class OrderData {
+public class OrderData implements Serializable {
 
     private StoreData orderStore;
     private Calendar orderDate;

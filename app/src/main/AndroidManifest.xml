@@ -27,9 +27,10 @@
         </activity>
         <activity android:name=".TempActivity" />
         <activity android:name=".ViewPagerTestActivity" />
-        <activity android:name=".ViewPagetTest2Activity"></activity>
+        <activity android:name=".ViewPagetTest2Activity" />
         <activity android:name=".Main2Activity" />
-        <activity android:name=".ViewStoreInfoActivity"></activity>
+        <activity android:name=".ViewStoreInfoActivity" />
+        <activity android:name=".ViewOrderInfoActivity"></activity>
     </application>
 
 </manifest>

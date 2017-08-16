@@ -1,6 +1,9 @@
 package kr.co.tjeit.yogiyocopy;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -48,6 +51,24 @@ public class MainActivity extends BaseActivity {
 
     @Override
     public void setupEvents() {
+
+        storeListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(mContext, ViewStoreInfoActivity.class);
+                intent.putExtra("가게데이터", storeDataList.get(position));
+                startActivity(intent);
+            }
+        });
+
+        orderListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(mContext, ViewOrderInfoActivity.class);
+                intent.putExtra("주문데이터", orderDataList.get(position));
+                startActivity(intent);
+            }
+        });
 
     }
 

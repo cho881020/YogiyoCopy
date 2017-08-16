@@ -1,5 +1,6 @@
 package kr.co.tjeit.yogiyocopy.data;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -7,7 +8,7 @@ import java.util.List;
  * Created by user on 2017-08-02.
  */
 
-public class StoreData {
+public class StoreData implements Serializable {
 
     private String imagePath;
     private String storeName;
