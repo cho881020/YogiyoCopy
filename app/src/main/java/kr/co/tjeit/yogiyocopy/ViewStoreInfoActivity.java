@@ -1,7 +1,9 @@
 package kr.co.tjeit.yogiyocopy;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -90,6 +92,14 @@ public class ViewStoreInfoActivity extends BaseActivity {
 
     @Override
     public void setupEvents() {
+
+        menuListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(mContext, ConfirmOrderActivity.class);
+                startActivity(intent);
+            }
+        });
 
     }
 

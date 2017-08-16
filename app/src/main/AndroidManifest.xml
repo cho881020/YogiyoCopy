@@ -30,7 +30,8 @@
         <activity android:name=".ViewPagetTest2Activity" />
         <activity android:name=".Main2Activity" />
         <activity android:name=".ViewStoreInfoActivity" />
-        <activity android:name=".ViewOrderInfoActivity"></activity>
+        <activity android:name=".ViewOrderInfoActivity" />
+        <activity android:name=".ConfirmOrderActivity"></activity>
     </application>
 
 </manifest>
