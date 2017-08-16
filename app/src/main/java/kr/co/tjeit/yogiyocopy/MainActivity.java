@@ -1,10 +1,11 @@
 package kr.co.tjeit.yogiyocopy;
 
-import android.app.TabActivity;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TabHost;
+import android.widget.TabWidget;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -15,7 +16,7 @@ import kr.co.tjeit.yogiyocopy.adapter.StoreAdapter;
 import kr.co.tjeit.yogiyocopy.data.OrderData;
 import kr.co.tjeit.yogiyocopy.data.StoreData;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
 
     TabHost myTabHost;
 
@@ -26,36 +27,44 @@ public class MainActivity extends AppCompatActivity {
     private ListView orderListView;
     List<OrderData> orderDataList = new ArrayList<>();
     OrderAdapter myOrderAdapter;
+    private android.widget.TabWidget tabs;
+    private android.widget.LinearLayout tab1;
+    private android.widget.LinearLayout tab2;
+    private android.widget.LinearLayout tab3;
+    private android.widget.LinearLayout tab4;
+    private android.widget.FrameLayout tabcontent;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        myTabHost = (TabHost) findViewById(R.id.myTabHost);
-        myTabHost.setup();
+        bindViews();
+        setupEvents();
+        setValues();
 
-        orderListView = (ListView) findViewById(R.id.orderListView);
-
-        storeListView = (ListView) findViewById(R.id.storeListView);
-
-        TabHost.TabSpec spec1 = myTabHost.newTabSpec("tab1").setIndicator("가게목록");
-        spec1.setContent(R.id.tab1);
-        myTabHost.addTab(spec1);
+    }
 
 
-        TabHost.TabSpec spec2 = myTabHost.newTabSpec("tab2").setIndicator("주문내역");
-        spec2.setContent(R.id.tab2);
-        myTabHost.addTab(spec2);
+    @Override
+    public void setupEvents() {
 
-        TabHost.TabSpec spec3 = myTabHost.newTabSpec("tab3").setIndicator("더보기");
-        spec3.setContent(R.id.tab3);
-        myTabHost.addTab(spec3);
+    }
 
-        TabHost.TabSpec spec4 = myTabHost.newTabSpec("tab4").setIndicator("프로필");
-        spec4.setContent(R.id.tab4);
-        myTabHost.addTab(spec4);
+    @Override
+    public void setValues() {
+        makeTabHost();
+        addListDatas();
 
+        storeAdapter = new StoreAdapter(MainActivity.this, storeDataList);
+        storeListView.setAdapter(storeAdapter);
+
+        myOrderAdapter = new OrderAdapter(MainActivity.this, orderDataList);
+        orderListView.setAdapter(myOrderAdapter);
+
+    }
+
+    private void addListDatas() {
 
         storeDataList.add(new StoreData("https://s3.ap-northeast-2.amazonaws.com/slws3/imgs/tje_practice/kyochon_logo.jpg", "교촌치킨-대학로점", 4.2f, 1200, 2330, 15000, true));
         storeDataList.add(new StoreData("https://s3.ap-northeast-2.amazonaws.com/slws3/imgs/tje_practice/one_logo.jpg", "원할머니보쌈-종로5가점", 3.8f, 1100, 300, 25000, false));
@@ -64,9 +73,6 @@ public class MainActivity extends AppCompatActivity {
         storeDataList.add(new StoreData("https://www.yogiyo.co.kr/media/restaurant_logos/%EC%89%AC%EB%A6%BC%ED%94%84_%ED%94%BC%EC%9E%9001_20131128_FoodAD_crop_200x200.jpg", "훼미리피자", 4.2f, 1200, 2330, 15000, true));
         storeDataList.add(new StoreData("https://www.yogiyo.co.kr/media/restaurant_logos/%ED%83%95%EC%88%98%EC%9C%A103_20131128_FoodAD_crop_200x200_Rn9zt25.jpg", "남경-남대문시장점", 3.8f, 1100, 300, 25000, false));
 
-
-        storeAdapter = new StoreAdapter(MainActivity.this, storeDataList);
-        storeListView.setAdapter(storeAdapter);
 
         orderDataList.add(new OrderData(storeDataList.get(0),
                 Calendar.getInstance(), "종로 3가", 15000));
@@ -89,10 +95,36 @@ public class MainActivity extends AppCompatActivity {
         orderDataList.add(new OrderData(storeDataList.get(2),
                 Calendar.getInstance(), "종로 1가", 12000));
 
-        myOrderAdapter = new OrderAdapter(MainActivity.this, orderDataList);
+    }
 
-        orderListView.setAdapter(myOrderAdapter);
+    private void makeTabHost() {
+        TabHost.TabSpec spec1 = myTabHost.newTabSpec("tab1").setIndicator("가게목록");
+        spec1.setContent(R.id.tab1);
+        myTabHost.addTab(spec1);
 
+
+        TabHost.TabSpec spec2 = myTabHost.newTabSpec("tab2").setIndicator("주문내역");
+        spec2.setContent(R.id.tab2);
+        myTabHost.addTab(spec2);
+
+        TabHost.TabSpec spec3 = myTabHost.newTabSpec("tab3").setIndicator("더보기");
+        spec3.setContent(R.id.tab3);
+        myTabHost.addTab(spec3);
+
+        TabHost.TabSpec spec4 = myTabHost.newTabSpec("tab4").setIndicator("프로필");
+        spec4.setContent(R.id.tab4);
+        myTabHost.addTab(spec4);
+    }
+
+
+    @Override
+    public void bindViews() {
+        myTabHost = (TabHost) findViewById(R.id.myTabHost);
+        orderListView = (ListView) findViewById(R.id.orderListView);
+        storeListView = (ListView) findViewById(R.id.storeListView);
+
+
+        myTabHost.setup();
     }
 }
 
