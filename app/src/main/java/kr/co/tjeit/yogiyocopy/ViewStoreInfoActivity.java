@@ -97,6 +97,7 @@ public class ViewStoreInfoActivity extends BaseActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(mContext, ConfirmOrderActivity.class);
+                intent.putExtra("메뉴데이터", mStoreData.getMenuDataList().get(position));
                 startActivity(intent);
             }
         });
