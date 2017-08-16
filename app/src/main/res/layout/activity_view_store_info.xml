@@ -408,6 +408,7 @@
                                         android:text="상호명" />
 
                                     <TextView
+                                        android:id="@+id/coprNameTxt"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:text="본도시락서울시청점"
@@ -428,6 +429,7 @@
                                         android:text="사업자등록번호" />
 
                                     <TextView
+                                        android:id="@+id/corpNumTxt"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:text="429-25-00238"

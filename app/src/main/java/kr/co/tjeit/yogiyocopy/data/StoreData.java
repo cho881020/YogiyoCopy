@@ -17,13 +17,15 @@ public class StoreData implements Serializable {
     private int closeTime;
     private int minCost;
     private boolean isCesco;
+    private String corpNumber; // 사업자등록번호 204-28"-"86905
+    private String corpName; // 상호명
     private List<String> reviews = new ArrayList<>();
 
     public StoreData() {
-
     }
 
-    public StoreData(String imagePath, String storeName, float avgRating, int openTime, int closeTime, int minCost, boolean isCesco) {
+
+    public StoreData(String imagePath, String storeName, float avgRating, int openTime, int closeTime, int minCost, boolean isCesco, String corpNumber, String corpName) {
         this.imagePath = imagePath;
         this.storeName = storeName;
         this.avgRating = avgRating;
@@ -31,6 +33,8 @@ public class StoreData implements Serializable {
         this.closeTime = closeTime;
         this.minCost = minCost;
         this.isCesco = isCesco;
+        this.corpNumber = corpNumber;
+        this.corpName = corpName;
     }
 
     public String getImagePath() {
@@ -88,6 +92,23 @@ public class StoreData implements Serializable {
     public void setCesco(boolean cesco) {
         isCesco = cesco;
     }
+
+    public String getCorpNumber() {
+        return corpNumber;
+    }
+
+    public void setCorpNumber(String corpNumber) {
+        this.corpNumber = corpNumber;
+    }
+
+    public String getCorpName() {
+        return corpName;
+    }
+
+    public void setCorpName(String corpName) {
+        this.corpName = corpName;
+    }
+
 
     public List<String> getReviews() {
         return reviews;

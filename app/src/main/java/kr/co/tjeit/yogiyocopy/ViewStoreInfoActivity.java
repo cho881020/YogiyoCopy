@@ -1,6 +1,7 @@
 package kr.co.tjeit.yogiyocopy;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -39,6 +40,8 @@ public class ViewStoreInfoActivity extends BaseActivity {
     private ImageView isCescoImg;
     private TextView isCescoTxt;
     private TextView minDeliveryCostInTabTxt;
+    private TextView corpNameTxt;
+    private TextView corpNumTxt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -136,6 +139,44 @@ public class ViewStoreInfoActivity extends BaseActivity {
         // load => 어떤 이미지를 불러올건지 (경로)
         // into => 어느 이미지뷰에다가 집어넣을건지
 
+        // 정보 탭에 최소 배달 금액을 설정하는 부분.
+        // setValue 상단에 이미 최소배달금액을 표시하는 부분이 있다.
+        // 그 부분에서 String 변수로 만들어서 내용을 표시하고 있으므로
+        // 그 변수를 그대로 setText하는걸로 마무리.
+        minDeliveryCostInTabTxt.setText(minDeliveryCostStr);
+
+        // mStoreData가 가진 openTime과 closeTime을 참조하여
+        // 여는 시간:분 ~ 닫는 시간:분 을 표기하는 부분.
+
+        // 시간 : /100으로 계산, 분 : %100으로 계산. => 4개의 변수 생성.
+        // 여는시간 , 여는 분, 닫는시간, 닫는 분
+        int openHour = mStoreData.getOpenTime() / 100; // openTime : 1220 => 시간? 12 분? 20
+        int openMinute = mStoreData.getOpenTime() % 100;
+        int closeHour = mStoreData.getCloseTime() / 100;
+        int closeMinute = mStoreData.getCloseTime() % 100;
+
+        // 열고닫는시간과분을, 무조건 두자리 정수로 표현하여 - 으로 연결하는 format
+        // 일반적으로 정수를 표현하고싶을땐 %d. 그런데 자리수를 두자리로 하기 위해 %02d로 변경.
+        // %02d => 정수를 무조건 두자리 (5=>05)
+        // 기본형 : %d 정수, %f 소수.
+        // cf. %.1f => f는 소수.  .1 => 소수점 뒤에 1자리만.
+        // 02 => 0이 2개. .1 => .뒤에1개
+        // 9:00 => 09:00
+        String openCloseStr = String.format(Locale.KOREA, "%02d:%02d - %02d:%02d", openHour, openMinute, closeHour, closeMinute);
+        openAndCloseTimeTxt.setText(openCloseStr);
+
+        // 세스코 가입 여부 표시
+        if (mStoreData.isCesco()) {
+            isCescoImg.setVisibility(View.VISIBLE);
+            isCescoTxt.setText("세스코멤버스 사업장");
+        } else {
+            isCescoImg.setVisibility(View.GONE);
+            isCescoTxt.setText("-");
+        }
+
+        corpNameTxt.setText(mStoreData.getCorpName());
+        corpNumTxt.setText(mStoreData.getCorpNumber());
+
     }
 
 
@@ -144,6 +185,8 @@ public class ViewStoreInfoActivity extends BaseActivity {
         this.storeTabHost = (TabHost) findViewById(R.id.storeTabHost);
         this.tabcontent = (FrameLayout) findViewById(android.R.id.tabcontent);
         this.tab3 = (LinearLayout) findViewById(R.id.tab3);
+        this.corpNumTxt = (TextView) findViewById(R.id.corpNumTxt);
+        this.corpNameTxt = (TextView) findViewById(R.id.coprNameTxt);
         this.minDeliveryCostInTabTxt = (TextView) findViewById(R.id.minDeliveryCostInTabTxt);
         this.isCescoTxt = (TextView) findViewById(R.id.isCescoTxt);
         this.isCescoImg = (ImageView) findViewById(R.id.isCescoImg);
